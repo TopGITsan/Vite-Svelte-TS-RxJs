@@ -1,5 +1,6 @@
 <script lang="ts">
   import Counter from './lib/Counter.svelte';
+  import Tick from './components/Tick.svelte';
 </script>
 
 <main>
@@ -9,6 +10,9 @@
     <Counter />
   </div>
 
+  <div class="card">
+    <Tick />
+  </div>
 </main>
 
 <style>
