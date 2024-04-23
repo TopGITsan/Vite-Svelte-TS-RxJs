@@ -3,6 +3,7 @@
   import Tick from './components/Tick.svelte';
   import TickStore from './components/Tick-Store.svelte';
   import TickRxJs from './components/Tick-RxJs.svelte';
+  import Typeahead from './components/Typeahead.svelte';
 </script>
 
 <main>
@@ -23,6 +24,11 @@
   <div class="card">
     <TickRxJs />
   </div>
+
+  <div class="card">
+    <Typeahead />
+  </div>
+
 </main>
 
 <style>
