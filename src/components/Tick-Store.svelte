@@ -1,7 +1,7 @@
 <script lang="ts">
   import { writable } from "svelte/store";
 
-  let tick = writable(0, () => {
+  const tick = writable(0, () => {
     let interval = setInterval(() => {
       tick.update((value: number) => value + 1);
     }, 1000);
@@ -12,4 +12,4 @@
   });
 </script>
 
-<h2>Store value: {$tick}</h2>
+<h2>Svelte store value: {$tick}</h2>

@@ -2,6 +2,7 @@
   import Counter from './lib/Counter.svelte';
   import Tick from './components/Tick.svelte';
   import TickStore from './components/Tick-Store.svelte';
+  import TickRxJs from './components/Tick-RxJs.svelte';
 </script>
 
 <main>
@@ -14,8 +15,13 @@
   <div class="card">
     <Tick />
   </div>
+
   <div class="card">
     <TickStore />
+  </div>
+
+  <div class="card">
+    <TickRxJs />
   </div>
 </main>
 

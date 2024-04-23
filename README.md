@@ -45,3 +45,6 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+
+**Adding node packages to the project**
+Actually, as of latest beta.51+, it is no longer necessary to care about dep vs. devDep since Vite now automatically discovers dependencies.
