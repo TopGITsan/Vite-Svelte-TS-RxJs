@@ -10,11 +10,6 @@
       clearInterval(interval);
     };
   });
-
-  let tickValue: number = 0;
-  tick.subscribe((v: number) => {
-    tickValue = v;
-  });
 </script>
 
-<h2>Store value: {tickValue}</h2>
+<h2>Store value: {$tick}</h2>
