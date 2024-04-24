@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ShowsList from './ShowsList.svelte';
+  import ShowsPagesInfo from "./ShowsPagesInfo.svelte";
+  import ShowsList from "./ShowsList.svelte";
 
   import {
     Observable,
@@ -62,14 +63,8 @@
   <div class="search"></div>
 </section>
 
-<section class="container">
-  <div class="info">
-    <span>Current page {$currentPage$} / </span>
-    <span>Total pages {$totalPages$}</span>
-  </div>
-</section>
-
-<ShowsList tvShows$={$tvShows$}></ShowsList>
+<ShowsPagesInfo currentPage={$currentPage$} totalPages={$totalPages$}></ShowsPagesInfo>
+<ShowsList tvShows={$tvShows$}></ShowsList>
 
 <style>
   /* input */
@@ -78,9 +73,6 @@
     margin: auto;
     width: 300px;
     height: 100px;
-  }
-  .info {
-    text-align: center;
   }
   .search {
     position: absolute;
