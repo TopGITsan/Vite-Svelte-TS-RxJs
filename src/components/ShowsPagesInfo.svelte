@@ -11,13 +11,7 @@
 </section>
 
 <style>
-  /* input */
-  .container {
-    position: relative;
-    margin: auto;
-    width: 300px;
-    height: 100px;
-  }
+  /* .container  is a global class */
   .info {
     text-align: center;
   }

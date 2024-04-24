@@ -68,12 +68,7 @@
 
 <style>
   /* input */
-  .container {
-    position: relative;
-    margin: auto;
-    width: 300px;
-    height: 100px;
-  }
+  /* .container  is a global class */
   .search {
     position: absolute;
     margin: auto;
