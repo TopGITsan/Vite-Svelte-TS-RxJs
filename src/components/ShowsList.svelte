@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let tvShows$: Array<any>;
+  export let tvShows: Array<any> = [];
 </script>
 
 <ul class="shows">
-  {#each tvShows$ as show}
+  {#each tvShows as show}
     <li>
       <a href="" class="show">
         <img src={show.image_thumbnail_path} class="show__image" alt={show.name} />
