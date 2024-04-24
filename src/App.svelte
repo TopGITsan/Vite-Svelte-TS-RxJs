@@ -3,7 +3,7 @@
   import Tick from './components/Tick.svelte';
   import TickStore from './components/Tick-Store.svelte';
   import TickRxJs from './components/Tick-RxJs.svelte';
-  import Typeahead from './components/Typeahead.svelte';
+  import TvShows from './containers/TvShows.svelte';
 </script>
 
 <main>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="card">
-    <Typeahead />
+    <TvShows />
   </div>
 
 </main>

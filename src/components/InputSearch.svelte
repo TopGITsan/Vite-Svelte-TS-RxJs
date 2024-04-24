@@ -4,6 +4,7 @@
   import { onDestroy } from "svelte";
   import { SvelteSubject } from "../utils/SvelteSubject";
 
+  // or use rx-svelte-forms with validators
   const inputValue$: SvelteSubject<string> = new SvelteSubject();
 
   const inputValueSub: Subscription = inputValue$

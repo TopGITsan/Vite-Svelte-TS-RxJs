@@ -1,20 +1,11 @@
 <script lang="ts">
-  import InputSearch from "./InputSearch.svelte";
+  import InputSearch from "../components/InputSearch.svelte";
+  import ShowsPagesInfo from "../components/ShowsPagesInfo.svelte";
+  import ShowsList from "../components/ShowsList.svelte";
 
-  import ShowsPagesInfo from "./ShowsPagesInfo.svelte";
-  import ShowsList from "./ShowsList.svelte";
-
-  import {
-    Observable,
-    catchError,
-    distinctUntilChanged,
-    map,
-    of,
-    startWith,
-    switchMap,
-  } from "rxjs";
-  import { fromFetch } from "rxjs/fetch";
+  import { Observable, distinctUntilChanged, map, of, startWith, switchMap } from "rxjs";
   import { SvelteBehaviorSubject } from "../utils/SvelteBehaviorSubject";
+  import { getShows } from "../data/showsHTTP";
 
   const typeAhead$: SvelteBehaviorSubject<string> = new SvelteBehaviorSubject("");
 
@@ -24,16 +15,7 @@
       if (!query) {
         return of([]);
       }
-      return fromFetch(`https://www.episodate.com/api/search?q=${query}`).pipe(
-        switchMap((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            return of({ error: true, message: `Error ${response.status}` });
-          }
-        }),
-        catchError((err) => of({ error: true, message: err.message })),
-      );
+      return getShows(query);
     }),
     startWith({}),
   );
@@ -51,7 +33,7 @@
   );
 
   function handleOnEventSearch(event: CustomEvent<string>) {
-    typeAhead$.next(event.detail)
+    typeAhead$.next(event.detail);
   }
 </script>
 
@@ -61,5 +43,3 @@
 
 <ShowsList tvShows={$tvShows$}></ShowsList>
 
-<style>
-</style>
